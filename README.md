@@ -14,6 +14,23 @@ The dataset used in this project is the **Breast Cancer Wisconsin dataset**, whi
 
 ---
 
+### **Why the notebook learning notes matter**
+
+The notebook [`Breast_cancer_classification_with_NN.ipynb`](Breast_cancer_classification_with_NN/Breast_cancer_classification_with_NN.ipynb) includes **markdown learning cells** placed before each major step. They are not a repeat of the code comments—they explain **why** each step exists in a real data-science workflow:
+
+| Theme | Why it matters |
+|--------|----------------|
+| **Reproducibility** | Fixed seeds, sklearn loaders, and train/test splits let you and others rerun the same experiment and compare models fairly. |
+| **Data quality** | `info()`, missing-value checks, and label counts catch schema and balance issues before they distort clinical-style metrics. |
+| **Leakage prevention** | Fitting `StandardScaler` only on training data—and keeping a true holdout test set—avoids optimistic scores that fail in production. |
+| **Scale & geometry** | Feature scaling matters for neural nets; EDA (`describe`, class means) connects domain features to modeling choices. |
+| **Generalization** | Train/validation curves and a final test evaluation separate memorization from performance on unseen biopsies. |
+| **Responsible ML** | Spot-checking predictions and understanding label encoding (0/1 meaning) supports correct interpretation in healthcare contexts. |
+
+If you are learning ML or revisiting this repo months later, read the markdown blocks **before** running the next code cell: they tie this small Keras example to habits you will use on larger tabular and clinical projects. **All original code outputs are unchanged** so results stay comparable to earlier runs.
+
+---
+
 ### **Tools and Libraries Used:**
 - **Python**: Programming language
 - **pandas**: Data manipulation
@@ -26,8 +43,8 @@ The dataset used in this project is the **Breast Cancer Wisconsin dataset**, whi
 
 ### **Data Description:**
 The dataset used is the **Breast Cancer Wisconsin (Diagnostic) Dataset**, which contains 30 features per sample that describe characteristics of the cell nuclei present in breast cancer biopsies. The target label is binary:
-- **0**: Benign
-- **1**: Malignant
+- **0**: Malignant
+- **1**: Benign
 
 **Key Features**:
 - Radius, texture, perimeter, area, smoothness, compactness, concavity, symmetry, fractal dimension of cell nuclei.
